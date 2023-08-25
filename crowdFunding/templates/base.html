@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% block title %}
+        {% endblock title %}
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Crowd-Funding-WebAPP" name="keywords">
+        <meta content="Crowd-Funding-WebAPP" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.ico'  %}" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="{% static 'libs/flaticon/font/flaticon.css' %}" rel="stylesheet">
+        <link href="{% static 'libs/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'libs/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+<body>
+{% include 'globalpages/nave.html' %}
+{% include 'globalpages/messages.html' %}
+
+{% block content %}
+{% endblock content %}
+{% include 'globalpages/footer.html' %}
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'libs/easing/easing.min.js' %}"></script>
+        <script src="{% static 'libs/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'libs/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'libs/counterup/counterup.min.js' %}"></script>
+        <script src="{% static 'libs/parallax/parallax.min.js' %}"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+        <script src="{% static 'mail/contact.js' %}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

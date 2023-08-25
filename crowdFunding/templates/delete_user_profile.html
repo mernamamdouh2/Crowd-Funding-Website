@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<!-- Page Header Start -->
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Delete User Profile</h2>
+      </div>
+      <div class="col-12">
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<div class="container my-5">
+  {% for message in messages %}
+  {% if message.tags == 'error' %}
+  <div class="alert alert-danger">
+    {{ message }}
+  </div>
+  {% endif %}
+  {% endfor %}
+  <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Account</button>
+  </form>
+</div>
+{% endblock %}

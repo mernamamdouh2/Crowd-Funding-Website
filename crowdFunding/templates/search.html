@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Make Report</title>
+{% endblock title %}
+
+{% block content %}
+
+
+<!-- Page Header Start -->
+<!-- <div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>matching projects found</h2>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'home' %}">Home</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Page Header End -->
+<div class="page-header">
+<div class="causes">
+    <div class="container">
+        <div class="section-header text-center">
+            
+            <h2>matching projects</h2>
+        </div>
+            {% for project in projects %}
+            <div class="causes-item">
+                <div class="causes-img">
+                    <a href="{% url 'projectPage' project.id %}">
+                        <img src="{{ project.main_Image.url }}" alt="Project image Image">
+                    </a>
+                </div>
+                <div class="causes-progress">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{project.goal_percentage}}"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            <span> {{project.goal_percentage}}% </span>
+                        </div>
+                    </div>
+                    <div class="progress-text">
+                        <p><strong>Raised:</strong> {{project.current_donation}} </p>
+                        <p><strong>Goal:</strong> {{project.total_target}} </p>
+                    </div>
+                </div>
+                <div class="causes-text">
+                    <h3> {{project.title}} </h3>
+                    <p>{{project.details}}</p>
+                </div>
+                <br>
+                <!--                    Average Rating-->
+                <h5 class="causes-text">Avg rating:
+                    <span class="fa fa-star {% if project.rate > 0 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 1 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 2 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 3 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 4 %} checked {% endif %}"></span>
+                </h5>
+                <!--                    End Average Rating-->
+                <!--                    End User Rating-->
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="rate(5, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                    </li>
+                    <li onclick="rate(4, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                    </li>
+                    <li onclick="rate(3, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                    </li>
+                    <li onclick="rate(2, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                    </li>
+                    <li onclick="rate(1, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                    </li>
+                </ul>
+
+                <!--                    End User Rating-->
+                <!--                    Comments-->
+                <div class="blog-meta">
+                    <p style="margin-left: 5px;"><i class="fa fa-comments"></i><a href="{% url 'projectPage' project.id %}">{{project.comment_set.count}} Comments</a></p>
+                </div>
+                <div class="causes-btn">
+                    <a class="btn btn-custom" href="{% url 'report' 'p' project.id 0 %}">Report</a>
+                    <a class="btn btn-custom" href="{% url 'makeDonation' project.id %}">Donate Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+
+{% endblock content %}

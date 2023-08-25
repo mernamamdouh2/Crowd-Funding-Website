@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+
+<body>  
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Register</h2>
+                </div>
+                <!-- <div class="col-12">
+                    <a href="">Home</a>
+                    <a href="">Contact</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->      
+    <!-- Contact Start -->
+    <div class="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <p>Get In Touch</p>
+                <h2>Contact for any query</h2>
+            </div>
+            <!-- <div class="contact-img">
+                <img src="img/contact.jpg" alt="Image">
+            </div> -->
+            <div class="contact-form">
+                    <div id="success"></div>
+
+                    <div class="content-section">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Join Today</legend>
+                                {{ form|crispy }}
+                            </fieldset>
+                
+                            By registering, you accept the Terms of Service and Privacy Notice
+                
+                            <div class="form-group">
+                                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                            </div>
+                        </form>
+                
+                            <a href="{% url 'social:begin' 'facebook' %}" class="fb btn">
+                                <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                            </a>
+                
+                        <small class="text-muted">
+                            Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+                        </small>
+                
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+</body>
+{% endblock content %}

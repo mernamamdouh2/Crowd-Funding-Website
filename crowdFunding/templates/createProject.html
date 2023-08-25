@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Create Project</title>
+{% endblock title %}
+
+{% block content %}
+
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Create Project</h2>
+            </div>
+            <div class="col-12">
+                <a href="">Home</a>
+                <a href="">Create Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Volunteer Start -->
+<div class="container">
+    <div class="volunteer" data-parallax="scroll" data-image-src="img/volunteer.jpg">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="volunteer-form">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <!--                                title-->
+                        <div class="control-group">
+                            <input type="text" class="form-control" placeholder="title" name="title"
+                                   required="required"/>
+                        </div>
+                        <!--                                details-->
+                        <div class="control-group">
+                            <textarea class="form-control" placeholder="enter details" name="details"
+                                      required="required"></textarea>
+                        </div>
+                        <!--                                target-->
+                        <div class="control-group">
+                            <input type="number" min="3000" class="form-control" placeholder="total Target"
+                                   name="target" required="required"/>
+                        </div>
+                        <!--                                Start -->
+                        <label for="mydate">Start Date</label>
+                        <div class="control-group">
+                            <input id="mydate" type="date" class="form-control" placeholder="total Target"
+                                   name="start" required="required"/>
+                            <span id="mydate_error" style="display:none;"> You should enter The  Current Date   </span>
+                        </div>
+                        <!--                                End-->
+                        <label for="endmydate">End Date</label>
+                        <div class="control-group">
+                            <input id="endmydate" type="date" class="form-control"
+                                   name="end" required="required"/>
+                            <span id="endmydate_error"
+                                  style="display:none;"> You should enter The  Current Date   </span>
+                        </div>
+                        <label for="Category">Choose a Category:</label>
+                        <select name="category" id="Category">
+                            {% for cat in categories %}
+                            <option value="{{cat}}">{{cat}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <br>
+                        <label class="form-label" for="images">Select Images:</label>
+                        <input class="form-control" type="file" id="images" name="images" multiple>
+                        <br>
+
+                        <label class="form-label" for="mainImage">Select The Main Image:</label>
+                        <input class="form-control" type="file" id="mainImage" name="mainImage">
+                        <br>
+
+                        <div>
+                            <button class="btn btn-custom" type="submit">Create Project</button>
+                        </div>
+                        {% if error %}
+                        <span style="color:red"> {{error}}</span>
+                        {%endif%}
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="volunteer-content">
+                    <div class="section-header">
+                        <p>Become A Volunteer</p>
+                        <h2>Let’s make a difference in the lives of others</h2>
+                    </div>
+                    <div class="volunteer-text">
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit
+                            non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi
+                            maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Volunteer End -->
+
+<!-- Back to top button -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- Pre Loader -->
+<div id="loader" class="show">
+    <div class="loader"></div>
+</div>
+
+{% endblock content %}

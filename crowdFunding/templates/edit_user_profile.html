@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+ <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Edit User Profile</h2>
+                    </div>
+                    <div class="col-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" class="form-control" value="{{ user.first_name }}">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" class="form-control" value="{{ user.last_name }}">
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile:</label>
+          <input type="text" name="mobile" class="form-control" value="{{ user.mobile }}">
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday:</label>
+          <input type="date" name="birthday" class="form-control" value="{{ user.birthday }}" placeholder="YYYY-MM-DD">
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" name="country" class="form-control" value="{{ user.country }}">
+        </div>
+        <div class="form-group">
+          <label for="facebook_profile">Facebook Profile:</label>
+          <input type="text" name="facebook_profile" class="form-control" value="{{ user.facebook_profile }}">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="return confirm('Your account has been Updated.👍❤️')">Update</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

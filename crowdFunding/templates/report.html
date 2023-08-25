@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Make Report</title>
+{% endblock title %}
+
+{% block content %}
+
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Make Report</h2>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="">Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- REPORT STARTS -->
+<div class="container">
+    <div class="donate" data-parallax="scroll" data-image-src="img/donate.jpg">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="donate-content">
+                    <div class="section-header">
+                        <p>Make Report</p>
+                        <h2>Tell Us Why You Want To Report This Project</h2>
+                    </div>
+                    <div class="donate-text">
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit
+                            non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi
+                            maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="donate-form">
+                    <!-- report form-->
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="control-group">
+                            <label for="reason">Reason *</label>
+                            <textarea id="reason" cols="30" rows="5" name="reason" class="form-control"
+                                      required></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-custom" type="submit">Report Now</button>
+                        </div>
+                    </form>
+                    <!-- report form end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- REPORT END -->
+
+
+<!-- Back to top button -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- Pre Loader -->
+<div id="loader" class="show">
+    <div class="loader"></div>
+</div>
+
+{% endblock content %}

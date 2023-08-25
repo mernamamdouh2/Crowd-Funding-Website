@@ -1,0 +1,492 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Crowd-Funding-WebAPP</title>
+{% endblock title %}
+
+{% block content %}
+<style>
+        .rating-list li {
+          float: right;
+          color: #ddd;
+          padding: 10px 5px;
+        }
+
+        .rating-list li:hover,
+        .rating-list li:hover ~ li {
+          color: orange;
+        }
+
+        .rating-list {
+          display: inline-block;
+          list-style: none;
+        }
+        .checked {
+            color: orange;
+        }
+
+
+
+</style>
+<!-- Carousel Start -->
+<div class="carousel">
+    <div class="container-fluid">
+        <div class="owl-carousel">
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/carousel-1.jpg'%}" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Let's be kind for children</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac
+                        consequat at lectus in malesuada
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn btn-custom" href="">Donate Now</a>
+                        <a class="btn btn-custom btn-play" data-toggle="modal"
+                           data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch
+                            Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/carousel-2.jpg' %}" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Get Involved with helping hand</h1>
+                    <p>
+                        Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci
+                        sodales varius fermentum, tortor
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn btn-custom" href="">Donate Now</a>
+                        <a class="btn btn-custom btn-play" data-toggle="modal"
+                           data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch
+                            Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/carousel-3.jpg' %}" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Bringing smiles to millions</h1>
+                    <p>
+                        Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod
+                        quam. Proin pellentesque odio
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn btn-custom" href="">Donate Now</a>
+                        <a class="btn btn-custom btn-play" data-toggle="modal"
+                           data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch
+                            Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+
+<!-- Video Modal Start-->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- 16:9 aspect ratio -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Modal End -->
+
+  <div >
+        {% include 'category_list.html' %}
+      </div>
+
+<!-- Service Start -->
+<div class="service">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>What We Do?</p>
+            <h2>We believe that we can save more lifes with you</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-diet"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Healthy Food</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-water"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Pure Water</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-healthcare"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Health Care</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-education"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Primary Education</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-home"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Residence Facilities</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-social-care"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Social Care</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+
+<!-- Facts Start -->
+<div class="facts" data-parallax="scroll" data-image-src="{% static 'img/facts.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-home"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-plus" data-toggle="counter-up">150</h3>
+                        <p>Countries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-charity"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-plus" data-toggle="counter-up">400</h3>
+                        <p>Volunteers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-kindness"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-dollar" data-toggle="counter-up">10000</h3>
+                        <p>Our Goal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-donation"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-dollar" data-toggle="counter-up">5000</h3>
+                        <p>Raised</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Facts End -->
+
+
+<!-- Causes Start -->
+<div class="causes">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Popular Causes</p>
+            <h2>Let's know about OpenProjects around the world</h2>
+        </div>
+
+
+        <p>Top Rated</p>
+
+        <div class="owl-carousel causes-carousel">
+            {% for project in projects_top %}
+            <div class="causes-item">
+                <div class="causes-img">
+                    <a href="{% url 'projectPage' project.id %}">
+                        <img src="{{ project.main_Image.url }}" alt="Project image Image">
+                    </a>
+                </div>
+                <div class="causes-progress">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{project.goal_percentage}}"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            <span> {{project.goal_percentage}}% </span>
+                        </div>
+                    </div>
+                    <div class="progress-text">
+                        <p><strong>Raised:</strong> {{project.current_donation}} </p>
+                        <p><strong>Goal:</strong> {{project.total_target}} </p>
+                    </div>
+                </div>
+                <div class="causes-text">
+                    <h3> {{project.title}} </h3>
+                    <p>{{project.details}}</p>
+                </div>
+                <br>
+                <!--                    Average Rating-->
+                <h5 class="causes-text">Avg rating:
+                    <span class="fa fa-star {% if project.rate > 0 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 1 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 2 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 3 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 4 %} checked {% endif %}"></span>
+                </h5>
+                <!--                    End Average Rating-->
+                <!--                    End User Rating-->
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="rate(5, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                    </li>
+                    <li onclick="rate(4, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                    </li>
+                    <li onclick="rate(3, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                    </li>
+                    <li onclick="rate(2, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                    </li>
+                    <li onclick="rate(1, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                    </li>
+                </ul>
+
+                <!--                    End User Rating-->
+                <!--                    Comments-->
+                <div class="blog-meta">
+                    <p style="margin-left: 5px;"><i class="fa fa-comments"></i><a href="{% url 'projectPage' project.id %}">{{project.comment_set.count}} Comments</a></p>
+                </div>
+                <div class="causes-btn">
+                    <a class="btn btn-custom" href="{% url 'report' 'p' project.id 0 %}">Report</a>
+                    <a class="btn btn-custom" href="{% url 'makeDonation' project.id %}">Donate Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <p style="margin-top: 10px;">Newest Projects</p>
+        <div class="owl-carousel causes-carousel">
+            {% for project in projects %}
+            <div class="causes-item">
+                <div class="causes-img">
+                    <a href="{% url 'projectPage' project.id %}">
+                        <img src="{{ project.main_Image.url }}" alt="Project image Image">
+                    </a>
+                </div>
+                <div class="causes-progress">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{project.goal_percentage}}"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            <span> {{project.goal_percentage}}% </span>
+                        </div>
+                    </div>
+                    <div class="progress-text">
+                        <p><strong>Raised:</strong> {{project.current_donation}} </p>
+                        <p><strong>Goal:</strong> {{project.total_target}} </p>
+                    </div>
+                </div>
+                <div class="causes-text">
+                    <h3> {{project.title}} </h3>
+                    <p>{{project.details}}</p>
+                </div>
+                <br>
+                <!--                    Average Rating-->
+                <h5 class="causes-text">Avg rating:
+                    <span class="fa fa-star {% if project.rate > 0 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 1 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 2 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 3 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 4 %} checked {% endif %}"></span>
+                </h5>
+                <!--                    End Average Rating-->
+                <!--                    End User Rating-->
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="rate(5, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                    </li>
+                    <li onclick="rate(4, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                    </li>
+                    <li onclick="rate(3, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                    </li>
+                    <li onclick="rate(2, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                    </li>
+                    <li onclick="rate(1, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                    </li>
+                </ul>
+
+                <!--                    End User Rating-->
+                <!--                    Comments-->
+                <div class="blog-meta">
+                    <p style="margin-left: 5px;"><i class="fa fa-comments"></i><a href="{% url 'projectPage' project.id %}">{{project.comment_set.count}} Comments</a></p>
+                </div>
+                <div class="causes-btn">
+                    <a class="btn btn-custom" href="{% url 'report' 'p' project.id 0 %}">Report</a>
+                    <a class="btn btn-custom" href="{% url 'makeDonation' project.id %}">Donate Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <p style="margin-top: 10px;">Special For You</p>
+
+        <div class="owl-carousel causes-carousel">
+            {% for project in projects_selected %}
+            <div class="causes-item">
+                <div class="causes-img">
+                    <a href="{% url 'projectPage' project.id %}">
+                        <img src="{{ project.main_Image.url }}" alt="Project image Image" >
+                    </a>
+                </div>
+                <div class="causes-progress">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{project.goal_percentage}}"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            <span> {{project.goal_percentage}}% </span>
+                        </div>
+                    </div>
+                    <div class="progress-text">
+                        <p><strong>Raised:</strong> {{project.current_donation}} </p>
+                        <p><strong>Goal:</strong> {{project.total_target}} </p>
+                    </div>
+                </div>
+                <div class="causes-text">
+                    <h3> {{project.title}} </h3>
+                    <p>{{project.details}}</p>
+                </div>
+                <br>
+                <!--                    Average Rating-->
+                <h5 class="causes-text">Avg rating:
+                    <span class="fa fa-star {% if project.rate > 0 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 1 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 2 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 3 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if project.rate > 4 %} checked {% endif %}"></span>
+                </h5>
+                <!--                    End Average Rating-->
+                <!--                    End User Rating-->
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="rate(5, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                    </li>
+                    <li onclick="rate(4, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                    </li>
+                    <li onclick="rate(3, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                    </li>
+                    <li onclick="rate(2, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                    </li>
+                    <li onclick="rate(1, {{ project.id }})">
+                        <i class="fa fa-star {% if project.user_rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                    </li>
+                </ul>
+
+                <!--                    End User Rating-->
+                <!--                    Comments-->
+                <div class="blog-meta">
+                    <p style="margin-left: 5px;"><i class="fa fa-comments"></i><a href="{% url 'projectPage' project.id %}">{{project.comment_set.count}} Comments</a></p>
+                </div>
+                <div class="causes-btn">
+                    <a class="btn btn-custom" href="{% url 'report' 'p' project.id 0 %}">Report</a>
+                    <a class="btn btn-custom" href="{% url 'makeDonation' project.id %}">Donate Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+</div>
+<!-- Causes End -->
+
+
+<!-- Back to top button -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- Pre Loader -->
+<div id="loader" class="show">
+    <div class="loader"></div>
+</div>
+<!--Rating SCript-->
+<script>
+        const rate = (rating, project_id) => {
+            fetch(`/rate/${project_id}/${rating}/`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(rest => {
+                window.location.reload();
+            })
+        }
+
+
+
+</script>
+{% endblock content %}
+

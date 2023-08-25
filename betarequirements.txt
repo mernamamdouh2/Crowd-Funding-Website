@@ -1,0 +1,10 @@
+Django
+Pillow
+psycopg2
+validate-email
+python-dotenv
+django-crispy-forms
+social-auth-app-django
+social-auth-core
+django-sslserver
+six
